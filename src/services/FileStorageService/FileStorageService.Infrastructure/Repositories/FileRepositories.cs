@@ -1,3 +1,4 @@
+using CRM.Shared.Application;
 using FileStorageService.Application.Handlers;
 using FileStorageService.Domain.Entities;
 using FileStorageService.Domain.Enums;

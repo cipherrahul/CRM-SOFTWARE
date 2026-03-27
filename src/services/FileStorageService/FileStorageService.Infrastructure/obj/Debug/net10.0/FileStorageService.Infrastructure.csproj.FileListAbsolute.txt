@@ -1,0 +1,6 @@
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Infrastructure\obj\Debug\net10.0\FileStorageService.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Infrastructure\obj\Debug\net10.0\FileStorageService.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Infrastructure\obj\Debug\net10.0\FileStorageService.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Infrastructure\obj\Debug\net10.0\FileStorageService.Infrastructure.AssemblyInfo.cs
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Infrastructure\obj\Debug\net10.0\FileStorageService.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Infrastructure\obj\Debug\net10.0\FileStorageService.Infrastructure.sourcelink.json
