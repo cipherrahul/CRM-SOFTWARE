@@ -16,3 +16,5 @@ C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Application\obj\Debug\
 C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Application\obj\Debug\net10.0\refint\CRMService.Application.dll
 C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Application\obj\Debug\net10.0\CRMService.Application.pdb
 C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Application\obj\Debug\net10.0\ref\CRMService.Application.dll
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Application\bin\Debug\net10.0\CRM.Shared.Events.dll
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Application\bin\Debug\net10.0\CRM.Shared.Events.pdb

@@ -56,7 +56,7 @@ internal sealed class DownloadFileHandler : IQueryHandler<DownloadFileQuery, Res
         if (meta is null || meta.IsDeleted) return Error.NotFound with { Code = "File.NotFound" };
 
         var stream = await _storage.DownloadAsync(meta.FileUrl, ct);
-        if (stream is null) return Error.Failure with { Code = "File.DownloadError", Description = "Physical file missing." };
+        if (stream is null) return new Error("File.DownloadError", "Physical file missing.");
 
         return new FileDownloadDto(stream, meta.FileName, meta.ContentType);
     }

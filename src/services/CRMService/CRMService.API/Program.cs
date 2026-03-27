@@ -1,5 +1,7 @@
 using CRMService.Infrastructure;
+using OpenTelemetry.Trace;
 using CRMService.Infrastructure.Persistence;
+using CRM.Shared.Infrastructure;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +18,15 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 builder.Host.UseSerilog();
+
+// ── OpenTelemetry ─────────────────────────────────────────────
+builder.Services.AddOpenTelemetry()
+    .WithTracing(tracing => tracing
+        .AddSource("CRM.CRMService")
+        .AddAspNetCoreInstrumentation()
+        .AddHttpClientInstrumentation()
+        .AddOtlpExporter(o => o.Endpoint = new Uri(builder.Configuration["Otlp:Endpoint"] ?? "http://localhost:4317")));
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -31,6 +42,8 @@ builder.Services.AddSwaggerGen(c =>
         { new() { Reference = new() { Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme, Id = "Bearer" } }, Array.Empty<string>() }
     });
 });
+
+builder.Services.AddCloudMessaging(builder.Configuration);
 
 builder.Services.AddInfrastructure(builder.Configuration);
 

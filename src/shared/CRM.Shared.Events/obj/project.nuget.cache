@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "bKR0dcGlwsk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\r\\Desktop\\crm\\src\\shared\\CRM.Shared.Events\\CRM.Shared.Events.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\r\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.14\\microsoft.netcore.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\r\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.14\\microsoft.windowsdesktop.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\r\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.14\\microsoft.aspnetcore.app.ref.9.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

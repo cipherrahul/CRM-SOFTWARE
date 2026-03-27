@@ -1,0 +1,43 @@
+name: AI CRM CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore -c Release
+
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  docker-build:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Build Identity Service Image
+      run: docker build -t crm-identity-service:latest -f src/services/IdentityService/IdentityService.API/Dockerfile .
+      
+    - name: Build CRM Service Image
+      run: docker build -t crm-crm-service:latest -f src/services/CRMService/CRMService.API/Dockerfile .
+      
+    - name: Build AI Service Image
+      run: docker build -t crm-ai-service:latest -f src/services/AIService/AIService.API/Dockerfile .

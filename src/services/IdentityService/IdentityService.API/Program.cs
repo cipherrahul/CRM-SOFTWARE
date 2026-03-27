@@ -1,4 +1,5 @@
 using IdentityService.Infrastructure;
+using OpenTelemetry.Trace;
 using IdentityService.Infrastructure.Auth;
 using IdentityService.Infrastructure.Persistence;
 using MediatR;
@@ -18,6 +19,14 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 builder.Host.UseSerilog();
+
+// ── OpenTelemetry ─────────────────────────────────────────────
+builder.Services.AddOpenTelemetry()
+    .WithTracing(tracing => tracing
+        .AddSource("CRM.IdentityService")
+        .AddAspNetCoreInstrumentation()
+        .AddHttpClientInstrumentation()
+        .AddOtlpExporter(o => o.Endpoint = new Uri(builder.Configuration["Otlp:Endpoint"] ?? "http://localhost:4317")));
 
 // ── Services ─────────────────────────────────────────────────
 builder.Services.AddControllers();

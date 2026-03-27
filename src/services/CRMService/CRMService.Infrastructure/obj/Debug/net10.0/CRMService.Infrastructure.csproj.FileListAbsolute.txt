@@ -20,3 +20,5 @@ C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Infrastructure\obj\Deb
 C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Infrastructure\obj\Debug\net10.0\CRMService.Infrastructure.pdb
 C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Infrastructure\obj\Debug\net10.0\CRMService.Infrastructure.genruntimeconfig.cache
 C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Infrastructure\obj\Debug\net10.0\ref\CRMService.Infrastructure.dll
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Infrastructure\bin\Debug\net10.0\CRM.Shared.Events.dll
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.Infrastructure\bin\Debug\net10.0\CRM.Shared.Events.pdb

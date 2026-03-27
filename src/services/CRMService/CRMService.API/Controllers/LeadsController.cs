@@ -30,6 +30,7 @@ public sealed class LeadsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin,Manager")]
     public async Task<IActionResult> Create([FromBody] CreateLeadCommand command, CancellationToken ct)
     {
         var result = await _sender.Send(command, ct);

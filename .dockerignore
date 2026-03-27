@@ -1,0 +1,12 @@
+**/*.sln
+**/*.user
+**/*.suo
+**/bin
+**/obj
+**/publish
+.git
+.gitignore
+.vs
+.vscode
+docker-compose*
+**/appsettings.Development.json

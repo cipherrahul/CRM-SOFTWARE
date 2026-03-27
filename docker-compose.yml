@@ -1,0 +1,75 @@
+services:
+  identity-db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: identity_db
+    ports:
+      - "5431:5432"
+
+  crm-db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: crm_db
+    ports:
+      - "5432:5432"
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  identity-service:
+    build:
+      context: .
+      dockerfile: src/services/IdentityService/IdentityService.API/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=identity-db;Database=identity_db;Username=admin;Password=password
+    depends_on:
+      - identity-db
+
+  crm-service:
+    build:
+      context: .
+      dockerfile: src/services/CRMService/CRMService.API/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=crm-db;Database=crm_db;Username=admin;Password=password
+      - RabbitMQ__Host=rabbitmq
+    depends_on:
+      - crm-db
+      - rabbitmq
+
+  ai-service:
+    build:
+      context: .
+      dockerfile: src/services/AIService/AIService.API/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=crm-db;Database=ai_db;Username=admin;Password=password
+      - RabbitMQ__Host=rabbitmq
+    depends_on:
+      - rabbitmq
+
+  gateway:
+    build:
+      context: .
+      dockerfile: src/gateway/CRM.Gateway/Dockerfile
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - identity-service
+      - crm-service
+      - ai-service

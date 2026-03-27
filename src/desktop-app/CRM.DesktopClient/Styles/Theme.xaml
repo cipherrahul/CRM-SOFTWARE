@@ -1,0 +1,45 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Zoho-inspired Dark Slate / Navy Palette -->
+    <Color x:Key="SidebarBgColor">#1a1d21</Color>
+    <Color x:Key="SidebarHoverColor">#2c313a</Color>
+    <Color x:Key="AccentColor">#3f51b5</Color>
+    <Color x:Key="TextPrimaryColor">#ffffff</Color>
+    <Color x:Key="TextSecondaryColor">#a0a0a0</Color>
+    <Color x:Key="MainBgColor">#f5f7f9</Color>
+
+    <SolidColorBrush x:Key="SidebarBg" Color="{StaticResource SidebarBgColor}"/>
+    <SolidColorBrush x:Key="SidebarHover" Color="{StaticResource SidebarHoverColor}"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+    <SolidColorBrush x:Key="TextPrimary" Color="{StaticResource TextPrimaryColor}"/>
+    <SolidColorBrush x:Key="TextSecondary" Color="{StaticResource TextSecondaryColor}"/>
+    <SolidColorBrush x:Key="MainBg" Color="{StaticResource MainBgColor}"/>
+
+    <Style x:Key="SidebarButtonStyle" TargetType="RadioButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource TextSecondary}"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="0,2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="{TemplateBinding Background}" Padding="20,0">
+                        <StackPanel Orientation="Horizontal">
+                            <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{StaticResource SidebarHover}"/>
+                            <Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource SidebarHover}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

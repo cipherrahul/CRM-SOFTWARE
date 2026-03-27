@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AIService.Application\AIService.Application.csproj" />
     <ProjectReference Include="..\AIService.Domain\AIService.Domain.csproj" />
+    <ProjectReference Include="..\..\..\shared\CRM.Shared.Events\CRM.Shared.Events.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -11,6 +12,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.2" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
   </ItemGroup>
 

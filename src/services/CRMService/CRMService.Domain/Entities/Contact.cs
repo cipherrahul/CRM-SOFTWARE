@@ -49,19 +49,26 @@ public sealed class Contact : AggregateRoot<Guid>
 
     public string FullName => $"{FirstName} {LastName}";
 
+    public void Update(string firstName, string lastName, string email,
+        string? phone, string? company, string? jobTitle)
+    {
+        FirstName = firstName;
+        LastName  = lastName;
+        Email     = email.ToLowerInvariant().Trim();
+        Phone     = phone;
+        Company   = company;
+        JobTitle  = jobTitle;
+        LastContactedAt = DateTime.UtcNow;
+    }
+
     public void UpdateProfile(string firstName, string lastName,
         string? phone, string? company, string? jobTitle,
         string? linkedin, string? website, string? notes)
     {
-        FirstName = firstName;
-        LastName  = lastName;
-        Phone     = phone;
-        Company   = company;
-        JobTitle  = jobTitle;
+        Update(firstName, lastName, Email, phone, company, jobTitle);
         LinkedIn  = linkedin;
         Website   = website;
         Notes     = notes;
-        LastContactedAt = DateTime.UtcNow;
     }
 
     public void SetAddress(string street, string city, string state, string country, string postalCode) =>

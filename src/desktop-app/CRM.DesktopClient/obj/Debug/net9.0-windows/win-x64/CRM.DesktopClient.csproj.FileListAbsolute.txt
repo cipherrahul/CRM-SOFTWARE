@@ -1,0 +1,2 @@
+C:\Users\r\Desktop\crm\src\desktop-app\CRM.DesktopClient\obj\Debug\net9.0-windows\win-x64\CRM.DesktopClient.csproj.AssemblyReference.cache
+C:\Users\r\Desktop\crm\src\desktop-app\CRM.DesktopClient\obj\Debug\net9.0-windows\win-x64\CRM.DesktopClient_MarkupCompile.cache

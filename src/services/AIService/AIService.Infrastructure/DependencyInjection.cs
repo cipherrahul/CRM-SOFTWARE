@@ -30,7 +30,7 @@ public static class DependencyInjection
         services.AddScoped<IRecommendationEngine,   RecommendationEngine>();
 
         // Settings
-        services.Configure<ChatbotSettings>(configuration.GetSection(ChatbotSettings.Section));
+        services.Configure<ChatbotSettings>(options => configuration.GetSection(ChatbotSettings.Section).Bind(options));
 
         return services;
     }

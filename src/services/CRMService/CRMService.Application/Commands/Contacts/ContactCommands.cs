@@ -15,15 +15,13 @@ public sealed record CreateContactCommand(
 
 // ── Update Contact ────────────────────────────────────────────
 public sealed record UpdateContactCommand(
-    Guid    Id,
+    Guid    ContactId,
     string  FirstName,
     string  LastName,
+    string  Email,
     string? Phone,
     string? Company,
-    string? JobTitle,
-    string? LinkedIn,
-    string? Website,
-    string? Notes) : ICommand<Result<ContactDto>>;
+    string? JobTitle) : ICommand<Result<ContactDto>>;
 
 // ── Delete Contact ────────────────────────────────────────────
 public sealed record DeleteContactCommand(Guid ContactId) : ICommand<Result>;

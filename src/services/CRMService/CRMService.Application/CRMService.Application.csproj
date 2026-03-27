@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CRMService.Domain\CRMService.Domain.csproj" />
     <ProjectReference Include="..\..\..\shared\CRM.Shared\CRM.Shared.csproj" />
+    <ProjectReference Include="..\..\..\shared\CRM.Shared.Events\CRM.Shared.Events.csproj" />
   </ItemGroup>
 
   <ItemGroup>

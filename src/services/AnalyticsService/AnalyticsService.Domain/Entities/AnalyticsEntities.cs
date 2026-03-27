@@ -6,7 +6,7 @@ namespace AnalyticsService.Domain.Entities;
 /// <summary>
 /// Raw event captured from any service or frontend.
 /// </summary>
-public sealed class AnalyticsEvent : Entity<Guid>
+public sealed class AnalyticsEvent : AggregateRoot<Guid>
 {
     public EventType            Type          { get; private set; }
     public Guid?                UserId        { get; private set; }

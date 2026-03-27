@@ -26,6 +26,25 @@ internal sealed class CreateContactHandler : ICommandHandler<CreateContactComman
     }
 }
 
+internal sealed class UpdateContactHandler : ICommandHandler<UpdateContactCommand, Result<ContactDto>>
+{
+    private readonly IContactRepository _contacts;
+    private readonly IUnitOfWork        _uow;
+
+    public UpdateContactHandler(IContactRepository contacts, IUnitOfWork uow) => (_contacts, _uow) = (contacts, uow);
+
+    public async Task<Result<ContactDto>> Handle(UpdateContactCommand req, CancellationToken ct)
+    {
+        var contact = await _contacts.GetByIdAsync(req.ContactId, ct);
+        if (contact is null) return Error.NotFound with { Code = "Contact.NotFound" };
+
+        contact.Update(req.FirstName, req.LastName, req.Email, req.Phone, req.Company, req.JobTitle);
+        await _contacts.UpdateAsync(contact, ct);
+        await _uow.SaveChangesAsync(ct);
+        return contact.ToDto();
+    }
+}
+
 internal sealed class DeleteContactHandler : ICommandHandler<DeleteContactCommand, Result>
 {
     private readonly IContactRepository _contacts;

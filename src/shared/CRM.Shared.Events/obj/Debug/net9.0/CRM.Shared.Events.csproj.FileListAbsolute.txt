@@ -1,0 +1,12 @@
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\bin\Debug\net9.0\CRM.Shared.Events.deps.json
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\bin\Debug\net9.0\CRM.Shared.Events.dll
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\bin\Debug\net9.0\CRM.Shared.Events.pdb
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\obj\Debug\net9.0\CRM.Shared.Events.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\obj\Debug\net9.0\CRM.Shared.Events.AssemblyInfoInputs.cache
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\obj\Debug\net9.0\CRM.Shared.Events.AssemblyInfo.cs
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\obj\Debug\net9.0\CRM.Shared.Events.csproj.CoreCompileInputs.cache
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\obj\Debug\net9.0\CRM.Shared.Events.sourcelink.json
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\obj\Debug\net9.0\CRM.Shared.Events.dll
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\obj\Debug\net9.0\refint\CRM.Shared.Events.dll
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\obj\Debug\net9.0\CRM.Shared.Events.pdb
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared.Events\obj\Debug\net9.0\ref\CRM.Shared.Events.dll

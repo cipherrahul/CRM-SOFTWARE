@@ -6,6 +6,7 @@ using CRMService.Application.Commands.Contacts;
 using CRMService.Application.Queries;
 using CRMService.Domain.Enums;
 using CRMService.Domain.Repositories;
+using CRM.Shared.Infrastructure;
 
 namespace CRMService.Application.Handlers.Queries;
 
@@ -27,14 +28,27 @@ internal sealed class GetLeadByIdHandler : IQueryHandler<GetLeadByIdQuery, Resul
 internal sealed class GetAllLeadsHandler : IQueryHandler<GetAllLeadsQuery, IEnumerable<LeadDto>>
 {
     private readonly ILeadRepository _leads;
-    public GetAllLeadsHandler(ILeadRepository leads) => _leads = leads;
+    private readonly ICacheService   _cache;
+
+    public GetAllLeadsHandler(ILeadRepository leads, ICacheService cache)
+    {
+        _leads = leads;
+        _cache = cache;
+    }
 
     public async Task<IEnumerable<LeadDto>> Handle(GetAllLeadsQuery req, CancellationToken ct)
     {
+        string cacheKey = $"leads_all_{req.OwnerId}";
+        var cached = await _cache.GetAsync<List<LeadDto>>(cacheKey, ct);
+        if (cached != null) return cached;
+
         var leads = req.OwnerId.HasValue
             ? await _leads.GetByOwnerAsync(req.OwnerId.Value, ct)
             : await _leads.GetAllAsync(ct);
-        return leads.Select(l => l.ToDto());
+        
+        var result = leads.Select(l => l.ToDto()).ToList();
+        await _cache.SetAsync(cacheKey, result, TimeSpan.FromMinutes(5), ct);
+        return result;
     }
 }
 

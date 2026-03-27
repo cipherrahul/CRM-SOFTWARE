@@ -1,5 +1,11 @@
 <Solution>
   <Folder Name="/src/" />
+  <Folder Name="/src/desktop-app/">
+    <Project Path="src/desktop-app/CRM.DesktopClient/CRM.DesktopClient.csproj" />
+  </Folder>
+  <Folder Name="/src/gateway/">
+    <Project Path="src/gateway/CRM.Gateway/CRM.Gateway.csproj" />
+  </Folder>
   <Folder Name="/src/services/" />
   <Folder Name="/src/services/AIService/">
     <Project Path="src/services/AIService/AIService.API/AIService.API.csproj" />
@@ -38,6 +44,7 @@
     <Project Path="src/services/NotificationService/NotificationService.Infrastructure/NotificationService.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/src/shared/">
+    <Project Path="src/shared/CRM.Shared.Events/CRM.Shared.Events.csproj" />
     <Project Path="src/shared/CRM.Shared/CRM.Shared.csproj" />
   </Folder>
 </Solution>

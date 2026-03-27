@@ -1,0 +1,144 @@
+<Window x:Class="CRM.DesktopClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="CRM.AI — Intelligence Elevated" Height="800" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource MainBg}"
+        FontFamily="Segoe UI">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Theme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <local:BooleanToSidebarWidthConverter x:Key="BooleanToSidebarWidthConverter" xmlns:local="clr-namespace:CRM.DesktopClient.Converters"/>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            
+            <!-- Animations -->
+            <Storyboard x:Key="ExpandSidebar">
+                <DoubleAnimation Storyboard.TargetName="SidebarColumn" 
+                                 Storyboard.TargetProperty="Width" 
+                                 To="260" Duration="0:0:0.3">
+                    <DoubleAnimation.EasingFunction>
+                        <QuadraticEase EasingMode="EaseOut"/>
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+            </Storyboard>
+            <Storyboard x:Key="CollapseSidebar">
+                <DoubleAnimation Storyboard.TargetName="SidebarColumn" 
+                                 Storyboard.TargetProperty="Width" 
+                                 To="70" Duration="0:0:0.3">
+                    <DoubleAnimation.EasingFunction>
+                        <QuadraticEase EasingMode="EaseOut"/>
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+            </Storyboard>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="SidebarColumn" Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Border Grid.Column="0" Background="{StaticResource SidebarBg}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="Auto"/> <!-- AI Command Box -->
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <StackPanel VerticalAlignment="Center" Margin="25,0">
+                        <TextBlock Text="CRM.AI" FontSize="24" FontWeight="Bold" Foreground="{StaticResource TextPrimary}"/>
+                    </StackPanel>
+                    <Button Command="{Binding ToggleSidebarCommand}" 
+                            HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"
+                            Style="{StaticResource SidebarButtonStyle}" Width="40" Height="40"
+                            Content="≡" FontSize="20"/>
+                </Grid>
+
+                <!-- AI Command Box -->
+                <Border Grid.Row="1" Margin="15,0,15,20" Padding="10" Background="{StaticResource SidebarHover}" CornerRadius="8">
+                    <Grid>
+                        <TextBox Background="Transparent" BorderThickness="0" Foreground="{StaticResource TextPrimary}" 
+                                 Text="{Binding AiSearchQuery, UpdateSourceTrigger=PropertyChanged}" 
+                                 Tag="Ask AI anything..."/>
+                        <TextBlock IsHitTestVisible="False" Text="Ask AI..." Foreground="{StaticResource TextSecondary}" VerticalAlignment="Center" Margin="5,0">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding AiSearchQuery}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                </Border>
+
+                <StackPanel Grid.Row="1" Margin="0,20">
+                    <RadioButton Style="{StaticResource SidebarButtonStyle}" Content="Dashboard" 
+                                 Command="{Binding NavigateToDashboardCommand}" IsChecked="True"/>
+                    
+                    <RadioButton Style="{StaticResource SidebarButtonStyle}" Content="Leads" 
+                                 Command="{Binding NavigateToLeadsCommand}"
+                                 Visibility="{Binding CanAccessManagerFeatures, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    
+                    <RadioButton Style="{StaticResource SidebarButtonStyle}" Content="Deals" 
+                                 Command="{Binding NavigateToAiCommand}"
+                                 Visibility="{Binding CanAccessManagerFeatures, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    
+                    <RadioButton Style="{StaticResource SidebarButtonStyle}" Content="Admin Panel" 
+                                 Command="{Binding NavigateToAiCommand}"
+                                 Visibility="{Binding CanAccessAdminFeatures, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                 
+                    <RadioButton Style="{StaticResource SidebarButtonStyle}" Content="AI Assistant" 
+                                 Command="{Binding NavigateToAiCommand}"/>
+                </StackPanel>
+
+                <Border Grid.Row="2" Padding="20" BorderBrush="{StaticResource SidebarHover}" BorderThickness="0,1,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="40" Height="40" Fill="{StaticResource AccentBrush}"/>
+                        <StackPanel Margin="15,0">
+                            <TextBlock Text="Rahul K" Foreground="{StaticResource TextPrimary}" FontWeight="SemiBold"/>
+                            <TextBlock Text="Admin" Foreground="{StaticResource TextSecondary}" FontSize="11"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <Border Grid.Column="1" Padding="40">
+            <StackPanel>
+                <TextBlock Text="Welcome back, Rahul" FontSize="32" FontWeight="SemiBold" Margin="0,0,0,20"/>
+
+                <!-- AI Insights Widget -->
+                <Border Background="{StaticResource SidebarBg}" CornerRadius="12" Padding="25" Margin="0,0,0,30" Effect="{StaticResource ControlShadow}">
+                    <StackPanel>
+                        <Grid>
+                            <TextBlock Text="✨ AI Intelligence Hub" FontSize="20" FontWeight="SemiBold" Foreground="{StaticResource TextPrimary}"/>
+                            <TextBlock Text="Live Forecast" HorizontalAlignment="Right" Foreground="{StaticResource AccentBrush}" FontSize="12" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Separator Background="{StaticResource SidebarHover}" Margin="0,15"/>
+                        <TextBlock Text="• AI predicts a 24% revenue surge in Q3 based on currently active Deals." Foreground="{StaticResource TextSecondary}" Margin="0,5"/>
+                        <TextBlock Text="• Priority Alert: Contact 'Acme Corp' (Lead Score: 94) immediately." Foreground="{StaticResource TextSecondary}" Margin="0,5"/>
+                        <TextBlock Text="• Suggested: Automate 'Follow-up' tasks for 15 Cold Leads." Foreground="{StaticResource TextSecondary}" Margin="0,5"/>
+                    </StackPanel>
+                </Border>
+
+                <ContentControl Content="{Binding CurrentView}"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

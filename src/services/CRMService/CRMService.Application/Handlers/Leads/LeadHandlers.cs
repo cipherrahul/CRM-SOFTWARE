@@ -1,9 +1,11 @@
 using CRM.Shared.Application;
 using CRM.Shared.Common;
+using CRM.Shared.Events;
 using CRMService.Application.Commands.Leads;
 using CRMService.Application.Interfaces;
 using CRMService.Domain.Entities;
 using CRMService.Domain.Repositories;
+using MassTransit;
 
 namespace CRMService.Application.Handlers.Leads;
 
@@ -11,8 +13,14 @@ internal sealed class CreateLeadHandler : ICommandHandler<CreateLeadCommand, Res
 {
     private readonly ILeadRepository _leads;
     private readonly IUnitOfWork     _uow;
+    private readonly IPublishEndpoint _publishEndpoint;
 
-    public CreateLeadHandler(ILeadRepository leads, IUnitOfWork uow) => (_leads, _uow) = (leads, uow);
+    public CreateLeadHandler(ILeadRepository leads, IUnitOfWork uow, IPublishEndpoint publishEndpoint)
+    {
+        _leads = leads;
+        _uow = uow;
+        _publishEndpoint = publishEndpoint;
+    }
 
     public async Task<Result<LeadDto>> Handle(CreateLeadCommand req, CancellationToken ct)
     {
@@ -22,6 +30,14 @@ internal sealed class CreateLeadHandler : ICommandHandler<CreateLeadCommand, Res
         var lead = Lead.Create(req.FirstName, req.LastName, req.Email, req.Source, req.OwnerId, req.Phone, req.Company, req.Priority);
         await _leads.AddAsync(lead, ct);
         await _uow.SaveChangesAsync(ct);
+
+        // Publish Integration Event
+        await _publishEndpoint.Publish(new LeadCreatedEvent(
+            lead.Id, 
+            $"{lead.FirstName} {lead.LastName}", 
+            lead.Email, 
+            lead.Company, 
+            req.Source.ToString()), ct);
 
         return lead.ToDto();
     }

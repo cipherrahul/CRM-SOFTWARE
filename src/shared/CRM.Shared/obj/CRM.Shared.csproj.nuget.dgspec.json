@@ -50,9 +50,21 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.3.6, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.3.6, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.4.1, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[9.0.2, )"
             }
           },
           "imports": [

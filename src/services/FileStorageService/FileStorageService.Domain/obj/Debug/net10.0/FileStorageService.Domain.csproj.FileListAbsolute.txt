@@ -1,0 +1,16 @@
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\bin\Debug\net10.0\FileStorageService.Domain.deps.json
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\bin\Debug\net10.0\FileStorageService.Domain.dll
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\bin\Debug\net10.0\FileStorageService.Domain.pdb
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\bin\Debug\net10.0\CRM.Shared.dll
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\bin\Debug\net10.0\CRM.Shared.pdb
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\obj\Debug\net10.0\FileStorageService.Domain.csproj.AssemblyReference.cache
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\obj\Debug\net10.0\FileStorageService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\obj\Debug\net10.0\FileStorageService.Domain.AssemblyInfoInputs.cache
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\obj\Debug\net10.0\FileStorageService.Domain.AssemblyInfo.cs
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\obj\Debug\net10.0\FileStorageService.Domain.csproj.CoreCompileInputs.cache
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\obj\Debug\net10.0\FileStorageService.Domain.sourcelink.json
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\obj\Debug\net10.0\FileStor.B1776BA9.Up2Date
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\obj\Debug\net10.0\FileStorageService.Domain.dll
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\obj\Debug\net10.0\refint\FileStorageService.Domain.dll
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\obj\Debug\net10.0\FileStorageService.Domain.pdb
+C:\Users\r\Desktop\crm\src\services\FileStorageService\FileStorageService.Domain\obj\Debug\net10.0\ref\FileStorageService.Domain.dll
