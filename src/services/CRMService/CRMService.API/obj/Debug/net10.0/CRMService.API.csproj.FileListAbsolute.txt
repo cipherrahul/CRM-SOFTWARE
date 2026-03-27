@@ -1,0 +1,9 @@
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.API\obj\Debug\net10.0\CRMService.API.csproj.AssemblyReference.cache
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.API\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.API\obj\Debug\net10.0\CRMService.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.API\obj\Debug\net10.0\CRMService.API.AssemblyInfoInputs.cache
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.API\obj\Debug\net10.0\CRMService.API.AssemblyInfo.cs
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.API\obj\Debug\net10.0\CRMService.API.csproj.CoreCompileInputs.cache
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.API\obj\Debug\net10.0\CRMService.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.API\obj\Debug\net10.0\CRMService.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\r\Desktop\crm\src\services\CRMService\CRMService.API\obj\Debug\net10.0\CRMService.API.sourcelink.json

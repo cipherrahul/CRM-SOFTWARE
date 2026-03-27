@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "FWkjaDqI3oM=",
+  "dgSpecHash": "Ke4bK+cQfPQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\r\\Desktop\\crm\\src\\services\\CRMService\\CRMService.Application\\CRMService.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\r\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\r\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\r\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
