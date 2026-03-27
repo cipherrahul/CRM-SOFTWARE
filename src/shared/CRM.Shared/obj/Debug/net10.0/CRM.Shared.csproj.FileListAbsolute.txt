@@ -1,0 +1,12 @@
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\bin\Debug\net10.0\CRM.Shared.deps.json
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\bin\Debug\net10.0\CRM.Shared.dll
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\bin\Debug\net10.0\CRM.Shared.pdb
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\obj\Debug\net10.0\CRM.Shared.csproj.AssemblyReference.cache
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\obj\Debug\net10.0\CRM.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\obj\Debug\net10.0\CRM.Shared.AssemblyInfoInputs.cache
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\obj\Debug\net10.0\CRM.Shared.AssemblyInfo.cs
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\obj\Debug\net10.0\CRM.Shared.csproj.CoreCompileInputs.cache
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\obj\Debug\net10.0\CRM.Shared.dll
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\obj\Debug\net10.0\refint\CRM.Shared.dll
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\obj\Debug\net10.0\CRM.Shared.pdb
+C:\Users\r\Desktop\crm\src\shared\CRM.Shared\obj\Debug\net10.0\ref\CRM.Shared.dll

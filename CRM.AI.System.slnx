@@ -1,0 +1,43 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/services/" />
+  <Folder Name="/src/services/AIService/">
+    <Project Path="src/services/AIService/AIService.API/AIService.API.csproj" />
+    <Project Path="src/services/AIService/AIService.Application/AIService.Application.csproj" />
+    <Project Path="src/services/AIService/AIService.Domain/AIService.Domain.csproj" />
+    <Project Path="src/services/AIService/AIService.Infrastructure/AIService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/services/AnalyticsService/">
+    <Project Path="src/services/AnalyticsService/AnalyticsService.API/AnalyticsService.API.csproj" />
+    <Project Path="src/services/AnalyticsService/AnalyticsService.Application/AnalyticsService.Application.csproj" />
+    <Project Path="src/services/AnalyticsService/AnalyticsService.Domain/AnalyticsService.Domain.csproj" />
+    <Project Path="src/services/AnalyticsService/AnalyticsService.Infrastructure/AnalyticsService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/services/CRMService/">
+    <Project Path="src/services/CRMService/CRMService.API/CRMService.API.csproj" />
+    <Project Path="src/services/CRMService/CRMService.Application/CRMService.Application.csproj" />
+    <Project Path="src/services/CRMService/CRMService.Domain/CRMService.Domain.csproj" />
+    <Project Path="src/services/CRMService/CRMService.Infrastructure/CRMService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/services/FileStorageService/">
+    <Project Path="src/services/FileStorageService/FileStorageService.API/FileStorageService.API.csproj" />
+    <Project Path="src/services/FileStorageService/FileStorageService.Application/FileStorageService.Application.csproj" />
+    <Project Path="src/services/FileStorageService/FileStorageService.Domain/FileStorageService.Domain.csproj" />
+    <Project Path="src/services/FileStorageService/FileStorageService.Infrastructure/FileStorageService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/services/IdentityService/">
+    <Project Path="src/services/IdentityService/IdentityService.API/IdentityService.API.csproj" />
+    <Project Path="src/services/IdentityService/IdentityService.Application/IdentityService.Application.csproj" />
+    <Project Path="src/services/IdentityService/IdentityService.Domain/IdentityService.Domain.csproj" />
+    <Project Path="src/services/IdentityService/IdentityService.Infrastructure/IdentityService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/services/NotificationService/">
+    <Project Path="src/services/NotificationService/NotificationService.API/NotificationService.API.csproj" />
+    <Project Path="src/services/NotificationService/NotificationService.Application/NotificationService.Application.csproj" />
+    <Project Path="src/services/NotificationService/NotificationService.Domain/NotificationService.Domain.csproj" />
+    <Project Path="src/services/NotificationService/NotificationService.Infrastructure/NotificationService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/shared/">
+    <Project Path="src/shared/CRM.Shared/CRM.Shared.csproj" />
+  </Folder>
+</Solution>
